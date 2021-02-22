@@ -87,8 +87,6 @@
       <DependentUpon>EmployeeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer.cs" />
-    <Compile Include="EmployeeModel.Context.cs" />
-    <Compile Include="EmployeeModel.Context1.cs" />
     <Compile Include="EmployeeModel.Context2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
