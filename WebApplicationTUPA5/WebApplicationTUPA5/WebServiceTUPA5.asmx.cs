@@ -24,11 +24,23 @@ namespace WebApplicationTUPA5
             return dataAccessLayer.GetEmployees();
         }
 
-
         [WebMethod]
         public void AddEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail)
         {
             dataAccessLayer.AddEmployee(no_, first_Name, last_Name, job_Title, address, phone_No_, e_Mail);
         }
+
+        [WebMethod]
+        public void UpdateEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail)
+        {
+            dataAccessLayer.UpdateEmployee(no_, first_Name, last_Name, job_Title, address, phone_No_, e_Mail);
+        }
+
+        [WebMethod]
+        public void DeleteEmployee(string no_)
+        {
+            return dataAccessLayer.RemoveEmployees(no_);
+        }
+
     }
 }
