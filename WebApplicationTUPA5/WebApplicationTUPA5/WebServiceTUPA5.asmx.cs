@@ -39,7 +39,7 @@ namespace WebApplicationTUPA5
         [WebMethod]
         public void DeleteEmployee(string no_)
         {
-            return dataAccessLayer.RemoveEmployees(no_);
+            dataAccessLayer.DeleteEmployee(no_);
         }
 
     }

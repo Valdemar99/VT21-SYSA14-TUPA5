@@ -75,6 +75,8 @@
     <Content Include="WebServiceTUPA5.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRONUS_Sverige_AB_Employee.cs" />
+    <Compile Include="DataAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebServiceTUPA5.asmx.cs">
       <DependentUpon>WebServiceTUPA5.asmx</DependentUpon>
