@@ -51,23 +51,27 @@ namespace WindowsFormsClient
             this.labelJobTitle = new System.Windows.Forms.Label();
             this.labelPhoneNo = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
+            this.labelFeedback = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(187, 608);
+            this.buttonDelete.Location = new System.Drawing.Point(125, 395);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(157, 40);
+            this.buttonDelete.Size = new System.Drawing.Size(105, 26);
             this.buttonDelete.TabIndex = 0;
             this.buttonDelete.Text = "Delete Employee";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(187, 469);
+            this.buttonSave.Location = new System.Drawing.Point(125, 305);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(157, 38);
+            this.buttonSave.Size = new System.Drawing.Size(105, 25);
             this.buttonSave.TabIndex = 3;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -76,33 +80,37 @@ namespace WindowsFormsClient
             // dataGridViewEmployee
             // 
             this.dataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmployee.Location = new System.Drawing.Point(395, 12);
+            this.dataGridViewEmployee.Location = new System.Drawing.Point(263, 8);
+            this.dataGridViewEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewEmployee.Name = "dataGridViewEmployee";
             this.dataGridViewEmployee.RowHeadersWidth = 62;
             this.dataGridViewEmployee.RowTemplate.Height = 28;
-            this.dataGridViewEmployee.Size = new System.Drawing.Size(456, 651);
+            this.dataGridViewEmployee.Size = new System.Drawing.Size(304, 423);
             this.dataGridViewEmployee.TabIndex = 4;
             // 
             // textBoxNo
             // 
-            this.textBoxNo.Location = new System.Drawing.Point(187, 86);
+            this.textBoxNo.Location = new System.Drawing.Point(125, 56);
+            this.textBoxNo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNo.Name = "textBoxNo";
-            this.textBoxNo.Size = new System.Drawing.Size(157, 26);
+            this.textBoxNo.Size = new System.Drawing.Size(106, 20);
             this.textBoxNo.TabIndex = 5;
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(187, 135);
+            this.textBoxFirstName.Location = new System.Drawing.Point(125, 88);
+            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(157, 26);
+            this.textBoxFirstName.Size = new System.Drawing.Size(106, 20);
             this.textBoxFirstName.TabIndex = 6;
             // 
             // radioButtonAdd
             // 
             this.radioButtonAdd.AutoSize = true;
-            this.radioButtonAdd.Location = new System.Drawing.Point(91, 425);
+            this.radioButtonAdd.Location = new System.Drawing.Point(61, 276);
+            this.radioButtonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonAdd.Name = "radioButtonAdd";
-            this.radioButtonAdd.Size = new System.Drawing.Size(137, 24);
+            this.radioButtonAdd.Size = new System.Drawing.Size(93, 17);
             this.radioButtonAdd.TabIndex = 7;
             this.radioButtonAdd.TabStop = true;
             this.radioButtonAdd.Text = "Add Employee";
@@ -111,9 +119,11 @@ namespace WindowsFormsClient
             // radioButtonEdit
             // 
             this.radioButtonEdit.AutoSize = true;
-            this.radioButtonEdit.Location = new System.Drawing.Point(234, 425);
+            this.radioButtonEdit.Checked = true;
+            this.radioButtonEdit.Location = new System.Drawing.Point(156, 276);
+            this.radioButtonEdit.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonEdit.Name = "radioButtonEdit";
-            this.radioButtonEdit.Size = new System.Drawing.Size(136, 24);
+            this.radioButtonEdit.Size = new System.Drawing.Size(92, 17);
             this.radioButtonEdit.TabIndex = 8;
             this.radioButtonEdit.TabStop = true;
             this.radioButtonEdit.Text = "Edit Employee";
@@ -121,132 +131,156 @@ namespace WindowsFormsClient
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(187, 183);
+            this.textBoxLastName.Location = new System.Drawing.Point(125, 119);
+            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(157, 26);
+            this.textBoxLastName.Size = new System.Drawing.Size(106, 20);
             this.textBoxLastName.TabIndex = 9;
             // 
             // textBoxJobTitle
             // 
-            this.textBoxJobTitle.Location = new System.Drawing.Point(187, 232);
+            this.textBoxJobTitle.Location = new System.Drawing.Point(125, 151);
+            this.textBoxJobTitle.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxJobTitle.Name = "textBoxJobTitle";
-            this.textBoxJobTitle.Size = new System.Drawing.Size(157, 26);
+            this.textBoxJobTitle.Size = new System.Drawing.Size(106, 20);
             this.textBoxJobTitle.TabIndex = 10;
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(187, 281);
+            this.textBoxAddress.Location = new System.Drawing.Point(125, 183);
+            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(157, 26);
+            this.textBoxAddress.Size = new System.Drawing.Size(106, 20);
             this.textBoxAddress.TabIndex = 11;
             // 
             // textBoxPhoneNo
             // 
-            this.textBoxPhoneNo.Location = new System.Drawing.Point(187, 330);
+            this.textBoxPhoneNo.Location = new System.Drawing.Point(125, 214);
+            this.textBoxPhoneNo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPhoneNo.Name = "textBoxPhoneNo";
-            this.textBoxPhoneNo.Size = new System.Drawing.Size(157, 26);
+            this.textBoxPhoneNo.Size = new System.Drawing.Size(106, 20);
             this.textBoxPhoneNo.TabIndex = 12;
             // 
             // comboBoxOldEmployeeNo
             // 
             this.comboBoxOldEmployeeNo.FormattingEnabled = true;
-            this.comboBoxOldEmployeeNo.Location = new System.Drawing.Point(187, 41);
+            this.comboBoxOldEmployeeNo.Location = new System.Drawing.Point(125, 27);
+            this.comboBoxOldEmployeeNo.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxOldEmployeeNo.Name = "comboBoxOldEmployeeNo";
-            this.comboBoxOldEmployeeNo.Size = new System.Drawing.Size(157, 28);
+            this.comboBoxOldEmployeeNo.Size = new System.Drawing.Size(106, 21);
             this.comboBoxOldEmployeeNo.TabIndex = 13;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(187, 378);
+            this.textBoxEmail.Location = new System.Drawing.Point(125, 246);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(157, 26);
+            this.textBoxEmail.Size = new System.Drawing.Size(106, 20);
             this.textBoxEmail.TabIndex = 14;
             // 
             // comboBoxDelete
             // 
             this.comboBoxDelete.FormattingEnabled = true;
-            this.comboBoxDelete.Location = new System.Drawing.Point(187, 554);
+            this.comboBoxDelete.Location = new System.Drawing.Point(125, 360);
+            this.comboBoxDelete.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDelete.Name = "comboBoxDelete";
-            this.comboBoxDelete.Size = new System.Drawing.Size(157, 28);
+            this.comboBoxDelete.Size = new System.Drawing.Size(106, 21);
             this.comboBoxDelete.TabIndex = 15;
             // 
             // labelOldNo
             // 
             this.labelOldNo.AutoSize = true;
-            this.labelOldNo.Location = new System.Drawing.Point(12, 44);
+            this.labelOldNo.Location = new System.Drawing.Point(8, 29);
+            this.labelOldNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelOldNo.Name = "labelOldNo";
-            this.labelOldNo.Size = new System.Drawing.Size(167, 20);
+            this.labelOldNo.Size = new System.Drawing.Size(112, 13);
             this.labelOldNo.TabIndex = 16;
             this.labelOldNo.Text = "Old Employee Number";
             // 
             // labelEmpNo
             // 
             this.labelEmpNo.AutoSize = true;
-            this.labelEmpNo.Location = new System.Drawing.Point(12, 89);
+            this.labelEmpNo.Location = new System.Drawing.Point(8, 58);
+            this.labelEmpNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmpNo.Name = "labelEmpNo";
-            this.labelEmpNo.Size = new System.Drawing.Size(174, 20);
+            this.labelEmpNo.Size = new System.Drawing.Size(118, 13);
             this.labelEmpNo.TabIndex = 17;
             this.labelEmpNo.Text = "New Employee Number";
             // 
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Location = new System.Drawing.Point(56, 135);
+            this.labelFirstName.Location = new System.Drawing.Point(37, 88);
+            this.labelFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(86, 20);
+            this.labelFirstName.Size = new System.Drawing.Size(57, 13);
             this.labelFirstName.TabIndex = 18;
             this.labelFirstName.Text = "First Name";
             // 
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(56, 186);
+            this.labelLastName.Location = new System.Drawing.Point(37, 121);
+            this.labelLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(86, 20);
+            this.labelLastName.Size = new System.Drawing.Size(58, 13);
             this.labelLastName.TabIndex = 19;
             this.labelLastName.Text = "Last Name";
             // 
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(74, 287);
+            this.labelAddress.Location = new System.Drawing.Point(49, 187);
+            this.labelAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(68, 20);
+            this.labelAddress.Size = new System.Drawing.Size(45, 13);
             this.labelAddress.TabIndex = 20;
             this.labelAddress.Text = "Address";
             // 
             // labelJobTitle
             // 
             this.labelJobTitle.AutoSize = true;
-            this.labelJobTitle.Location = new System.Drawing.Point(74, 238);
+            this.labelJobTitle.Location = new System.Drawing.Point(49, 155);
+            this.labelJobTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJobTitle.Name = "labelJobTitle";
-            this.labelJobTitle.Size = new System.Drawing.Size(68, 20);
+            this.labelJobTitle.Size = new System.Drawing.Size(47, 13);
             this.labelJobTitle.TabIndex = 21;
             this.labelJobTitle.Text = "Job Title";
             // 
             // labelPhoneNo
             // 
             this.labelPhoneNo.AutoSize = true;
-            this.labelPhoneNo.Location = new System.Drawing.Point(27, 330);
+            this.labelPhoneNo.Location = new System.Drawing.Point(18, 214);
+            this.labelPhoneNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPhoneNo.Name = "labelPhoneNo";
-            this.labelPhoneNo.Size = new System.Drawing.Size(115, 20);
+            this.labelPhoneNo.Size = new System.Drawing.Size(78, 13);
             this.labelPhoneNo.TabIndex = 22;
             this.labelPhoneNo.Text = "Phone Number";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(94, 378);
+            this.labelEmail.Location = new System.Drawing.Point(63, 246);
+            this.labelEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(48, 20);
+            this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 23;
             this.labelEmail.Text = "Email";
             // 
+            // labelFeedback
+            // 
+            this.labelFeedback.AutoSize = true;
+            this.labelFeedback.Location = new System.Drawing.Point(12, 431);
+            this.labelFeedback.Name = "labelFeedback";
+            this.labelFeedback.Size = new System.Drawing.Size(0, 13);
+            this.labelFeedback.TabIndex = 24;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 697);
+            this.ClientSize = new System.Drawing.Size(584, 453);
+            this.Controls.Add(this.labelFeedback);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelPhoneNo);
             this.Controls.Add(this.labelJobTitle);
@@ -269,6 +303,7 @@ namespace WindowsFormsClient
             this.Controls.Add(this.dataGridViewEmployee);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonDelete);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
@@ -301,6 +336,7 @@ namespace WindowsFormsClient
         private System.Windows.Forms.Label labelJobTitle;
         private System.Windows.Forms.Label labelPhoneNo;
         private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Label labelFeedback;
     }
 }
 

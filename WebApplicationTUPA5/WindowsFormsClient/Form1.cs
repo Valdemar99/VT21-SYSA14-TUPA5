@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsClient.ServiceReferenceTUPA5;
 
 namespace WindowsFormsClient
 {
     public partial class Form1 : Form
     {
+        private WebServiceTUPA5Soap proxy;
         public Form1()
         {
             InitializeComponent();
+            proxy = new WebServiceTUPA5SoapClient();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -32,65 +35,71 @@ namespace WindowsFormsClient
             {
                 if (newEmployeeNumber.Equals(""))//Error message if the textbox is empty
                 {
-                    labelFeedbackForBuildings.Text = "To add a new employee, please insert an employee number.";
+                    labelFeedback.Text = "To add a new employee, please insert an employee number.";
                 }
 
                 try 
                 {
-                    
-                    
-                    dataAccessLayer.AddBuilding(newAddress);
-                    labelFeedbackForBuildings.Text = "The building with address'" + newAddress + "'\nhas been successfully added to database.";
-                    UpdateBuildingData();
-                        
-                 
+                    proxy.AddEmployee(newEmployeeNumber, firstName, lastName, jobTitle, address, phoneNumber, email);
+
+                    labelFeedback.Text = "The employee has been successfully added to database.";
+                    UpdateEmployeeData();
                 } catch
                 {
 
                 }
             }
 
-            if (radioButtonEditBuilding.Checked == true) //If edit building is chosen
+            if (radioButtonEdit.Checked == true) //If edit building is chosen
             {
                 try
                 {
-                    string oldEmployeeNo = comboBoxOldEmployeeNo.SelectedItem.ToString();
-                    //Checks if the old address doesn't exist in the database, if so, change to address in new address textbox
-                    if (dataAccessLayer.checkIfBuildingExists(oldAddress) == true)
+                    string oldEmployeeNo = comboBoxOldEmployeeNo.SelectedItem.ToString();                   
+                    if (newEmployeeNumber.Equals(""))//Error message if the textbox is empty
                     {
-                        if (newAddress.Equals(""))//Error message if the textbox is empty
-                        {
-                            labelFeedbackForBuildings.Text = "To edit a new building, please insert the new address.";
-                        }
-                        else
-                        { //Checks if the new address doesn't exist in the database, if so, edits the old address to the new one 
-
-                            if (dataAccessLayer.checkIfBuildingExists(newAddress) == true) // If the new address already exists it sends an error message
-                            {
-                                labelFeedbackForBuildings.Text = "This building with inserted new address already exists\n in our database. Please try another another address.";
-                            }
-
-                            if (dataAccessLayer.checkIfBuildingExists(newAddress) != true)
-                            {
-                                dataAccessLayer.EditBuilding(oldAddress, newAddress);
-                                labelFeedbackForBuildings.Text = "The building with address'" + oldAddress + "' has been successfully \nchanged into '" + newAddress + "' within the database.";
-                                UpdateBuildingData();
-
-                            }
-
-                        }
-
-
+                        labelFeedback.Text = "To edit an employee, please insert the new employee number.";
+                    }
+                    else
+                    { //Checks if the new address doesn't exist in the database, if so, edits the old address to the new one
+                        proxy.UpdateEmployee(oldEmployeeNo, firstName, lastName, jobTitle, address, phoneNumber, email);
+                        labelFeedback.Text = "The employee has been successfully updated within the database.";
+                        UpdateEmployeeData();
                     }
 
                 }
                 catch (NullReferenceException)
                 {
-                    labelFeedbackForBuildings.Text = "Please choose address to edit";
+                    labelFeedback.Text = "Please choose address to edit";
+                }
+                catch(Exception e)
+                {
+                    // If the new address already exists it sends an error message
+                    labelFeedback.Text = "This building with inserted new address already exists\n in our database. Please try another another address.";
 
+                    //Generic error handling.
                 }
             }
         }
-    }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string employeeNumberToDelete = comboBoxDelete.SelectedItem.ToString();
+                proxy.DeleteEmployee(employeeNumberToDelete);
+            }
+            catch (NullReferenceException)
+            {
+                labelFeedback.Text = "Please choose employee to delete.";
+
+            }
+        }
+        private void UpdateEmployeeData()
+        {
+            //Do something
+        }
+        
+        
     }
 }
+
