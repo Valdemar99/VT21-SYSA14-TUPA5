@@ -57,7 +57,7 @@ namespace WindowsFormsClient
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(125, 395);
+            this.buttonDelete.Location = new System.Drawing.Point(157, 398);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(105, 26);
@@ -68,7 +68,7 @@ namespace WindowsFormsClient
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(125, 305);
+            this.buttonSave.Location = new System.Drawing.Point(157, 308);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(105, 25);
@@ -80,7 +80,7 @@ namespace WindowsFormsClient
             // dataGridViewEmployee
             // 
             this.dataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmployee.Location = new System.Drawing.Point(263, 8);
+            this.dataGridViewEmployee.Location = new System.Drawing.Point(295, 11);
             this.dataGridViewEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewEmployee.Name = "dataGridViewEmployee";
             this.dataGridViewEmployee.RowHeadersWidth = 62;
@@ -90,7 +90,7 @@ namespace WindowsFormsClient
             // 
             // textBoxNo
             // 
-            this.textBoxNo.Location = new System.Drawing.Point(125, 56);
+            this.textBoxNo.Location = new System.Drawing.Point(157, 59);
             this.textBoxNo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNo.Name = "textBoxNo";
             this.textBoxNo.Size = new System.Drawing.Size(106, 20);
@@ -98,7 +98,7 @@ namespace WindowsFormsClient
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(125, 88);
+            this.textBoxFirstName.Location = new System.Drawing.Point(157, 91);
             this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(106, 20);
@@ -107,7 +107,7 @@ namespace WindowsFormsClient
             // radioButtonAdd
             // 
             this.radioButtonAdd.AutoSize = true;
-            this.radioButtonAdd.Location = new System.Drawing.Point(61, 276);
+            this.radioButtonAdd.Location = new System.Drawing.Point(93, 279);
             this.radioButtonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonAdd.Name = "radioButtonAdd";
             this.radioButtonAdd.Size = new System.Drawing.Size(93, 17);
@@ -120,7 +120,7 @@ namespace WindowsFormsClient
             // 
             this.radioButtonEdit.AutoSize = true;
             this.radioButtonEdit.Checked = true;
-            this.radioButtonEdit.Location = new System.Drawing.Point(156, 276);
+            this.radioButtonEdit.Location = new System.Drawing.Point(188, 279);
             this.radioButtonEdit.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonEdit.Name = "radioButtonEdit";
             this.radioButtonEdit.Size = new System.Drawing.Size(92, 17);
@@ -131,7 +131,7 @@ namespace WindowsFormsClient
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(125, 119);
+            this.textBoxLastName.Location = new System.Drawing.Point(157, 122);
             this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(106, 20);
@@ -139,7 +139,7 @@ namespace WindowsFormsClient
             // 
             // textBoxJobTitle
             // 
-            this.textBoxJobTitle.Location = new System.Drawing.Point(125, 151);
+            this.textBoxJobTitle.Location = new System.Drawing.Point(157, 154);
             this.textBoxJobTitle.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxJobTitle.Name = "textBoxJobTitle";
             this.textBoxJobTitle.Size = new System.Drawing.Size(106, 20);
@@ -147,7 +147,7 @@ namespace WindowsFormsClient
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(125, 183);
+            this.textBoxAddress.Location = new System.Drawing.Point(157, 186);
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(106, 20);
@@ -155,7 +155,7 @@ namespace WindowsFormsClient
             // 
             // textBoxPhoneNo
             // 
-            this.textBoxPhoneNo.Location = new System.Drawing.Point(125, 214);
+            this.textBoxPhoneNo.Location = new System.Drawing.Point(157, 217);
             this.textBoxPhoneNo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPhoneNo.Name = "textBoxPhoneNo";
             this.textBoxPhoneNo.Size = new System.Drawing.Size(106, 20);
@@ -164,7 +164,7 @@ namespace WindowsFormsClient
             // comboBoxOldEmployeeNo
             // 
             this.comboBoxOldEmployeeNo.FormattingEnabled = true;
-            this.comboBoxOldEmployeeNo.Location = new System.Drawing.Point(125, 27);
+            this.comboBoxOldEmployeeNo.Location = new System.Drawing.Point(157, 30);
             this.comboBoxOldEmployeeNo.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxOldEmployeeNo.Name = "comboBoxOldEmployeeNo";
             this.comboBoxOldEmployeeNo.Size = new System.Drawing.Size(106, 21);
@@ -172,7 +172,7 @@ namespace WindowsFormsClient
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(125, 246);
+            this.textBoxEmail.Location = new System.Drawing.Point(157, 249);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(106, 20);
@@ -181,7 +181,7 @@ namespace WindowsFormsClient
             // comboBoxDelete
             // 
             this.comboBoxDelete.FormattingEnabled = true;
-            this.comboBoxDelete.Location = new System.Drawing.Point(125, 360);
+            this.comboBoxDelete.Location = new System.Drawing.Point(157, 363);
             this.comboBoxDelete.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDelete.Name = "comboBoxDelete";
             this.comboBoxDelete.Size = new System.Drawing.Size(106, 21);
@@ -190,7 +190,7 @@ namespace WindowsFormsClient
             // labelOldNo
             // 
             this.labelOldNo.AutoSize = true;
-            this.labelOldNo.Location = new System.Drawing.Point(8, 29);
+            this.labelOldNo.Location = new System.Drawing.Point(15, 33);
             this.labelOldNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelOldNo.Name = "labelOldNo";
             this.labelOldNo.Size = new System.Drawing.Size(112, 13);
@@ -200,7 +200,7 @@ namespace WindowsFormsClient
             // labelEmpNo
             // 
             this.labelEmpNo.AutoSize = true;
-            this.labelEmpNo.Location = new System.Drawing.Point(8, 58);
+            this.labelEmpNo.Location = new System.Drawing.Point(15, 58);
             this.labelEmpNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmpNo.Name = "labelEmpNo";
             this.labelEmpNo.Size = new System.Drawing.Size(118, 13);
@@ -210,7 +210,7 @@ namespace WindowsFormsClient
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Location = new System.Drawing.Point(37, 88);
+            this.labelFirstName.Location = new System.Drawing.Point(44, 88);
             this.labelFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(57, 13);
@@ -220,7 +220,7 @@ namespace WindowsFormsClient
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(37, 121);
+            this.labelLastName.Location = new System.Drawing.Point(44, 121);
             this.labelLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(58, 13);
@@ -230,7 +230,7 @@ namespace WindowsFormsClient
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(49, 187);
+            this.labelAddress.Location = new System.Drawing.Point(56, 187);
             this.labelAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(45, 13);
@@ -240,7 +240,7 @@ namespace WindowsFormsClient
             // labelJobTitle
             // 
             this.labelJobTitle.AutoSize = true;
-            this.labelJobTitle.Location = new System.Drawing.Point(49, 155);
+            this.labelJobTitle.Location = new System.Drawing.Point(56, 155);
             this.labelJobTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJobTitle.Name = "labelJobTitle";
             this.labelJobTitle.Size = new System.Drawing.Size(47, 13);
@@ -250,7 +250,7 @@ namespace WindowsFormsClient
             // labelPhoneNo
             // 
             this.labelPhoneNo.AutoSize = true;
-            this.labelPhoneNo.Location = new System.Drawing.Point(18, 214);
+            this.labelPhoneNo.Location = new System.Drawing.Point(25, 214);
             this.labelPhoneNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPhoneNo.Name = "labelPhoneNo";
             this.labelPhoneNo.Size = new System.Drawing.Size(78, 13);
@@ -260,7 +260,7 @@ namespace WindowsFormsClient
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(63, 246);
+            this.labelEmail.Location = new System.Drawing.Point(70, 246);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
@@ -279,7 +279,7 @@ namespace WindowsFormsClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 453);
+            this.ClientSize = new System.Drawing.Size(621, 453);
             this.Controls.Add(this.labelFeedback);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelPhoneNo);

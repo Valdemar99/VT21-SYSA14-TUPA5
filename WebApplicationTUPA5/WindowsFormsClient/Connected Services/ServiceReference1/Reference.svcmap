@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3eb4118d-2618-4d02-880b-5f2efbf1b2ba" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a7f1cf7d-81c4-41e6-960b-99d47c8b2606" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,7 +22,7 @@
     <MetadataSource Address="http://localhost/WebApplicationTUPA5/WebServiceTUPA5.asmx?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WebServiceTUPA5.wsdl" MetadataType="Wsdl" ID="92e58c17-5d75-479b-9391-0361f6a1de8e" SourceId="1" SourceUrl="http://localhost/WebApplicationTUPA5/WebServiceTUPA5.asmx?WSDL" />
+    <MetadataFile FileName="WebServiceTUPA5.wsdl" MetadataType="Wsdl" ID="e09a3683-ea3f-4bd4-aa2b-cc2ddfaec520" SourceId="1" SourceUrl="http://localhost/WebApplicationTUPA5/WebServiceTUPA5.asmx?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

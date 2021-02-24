@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TUPA5Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EmployeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CRONUS Sverige AB$Employee">
           <Key>
             <PropertyRef Name="No_" />
@@ -56,14 +56,14 @@
           <Property Name="Salespers__Purch_ Code" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="No_ Series" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="TUPA5ModelStoreContainer">
+        <EntityContainer Name="EmployeeModelStoreContainer">
           <EntitySet Name="CRONUS Sverige AB$Employee" EntityType="Self.CRONUS Sverige AB$Employee" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TUPA5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="EmployeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CRONUS_Sverige_AB_Employee">
           <Key>
             <PropertyRef Name="No_" />
@@ -115,7 +115,7 @@
           <Property Name="Salespers__Purch__Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="No__Series" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="TUPA5Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EmployeeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CRONUS_Sverige_AB_Employee" EntityType="Self.CRONUS_Sverige_AB_Employee" />
         </EntityContainer>
       </Schema>
@@ -123,9 +123,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TUPA5ModelStoreContainer" CdmEntityContainer="TUPA5Entities">
+        <EntityContainerMapping StorageEntityContainer="EmployeeModelStoreContainer" CdmEntityContainer="EmployeeEntities">
           <EntitySetMapping Name="CRONUS_Sverige_AB_Employee">
-            <EntityTypeMapping TypeName="TUPA5Model.CRONUS_Sverige_AB_Employee">
+            <EntityTypeMapping TypeName="EmployeeModel.CRONUS_Sverige_AB_Employee">
               <MappingFragment StoreEntitySet="CRONUS Sverige AB$Employee">
                 <ScalarProperty Name="timestamp" ColumnName="timestamp" />
                 <ScalarProperty Name="No_" ColumnName="No_" />

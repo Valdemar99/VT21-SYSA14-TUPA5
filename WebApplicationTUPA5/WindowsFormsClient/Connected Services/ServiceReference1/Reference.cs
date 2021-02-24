@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsClient.ServiceReferenceTUPA5 {
+namespace WindowsFormsClient.ServiceReference1 {
     using System.Runtime.Serialization;
     using System;
     
@@ -770,36 +770,36 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceTUPA5.WebServiceTUPA5Soap")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.WebServiceTUPA5Soap")]
     public interface WebServiceTUPA5Soap {
         
         // CODEGEN: Generating message contract since element name GetEmployeesResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployees", ReplyAction="*")]
-        WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesResponse GetEmployees(WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequest request);
+        WindowsFormsClient.ServiceReference1.GetEmployeesResponse GetEmployees(WindowsFormsClient.ServiceReference1.GetEmployeesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployees", ReplyAction="*")]
-        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesResponse> GetEmployeesAsync(WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequest request);
+        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.GetEmployeesResponse> GetEmployeesAsync(WindowsFormsClient.ServiceReference1.GetEmployeesRequest request);
         
         // CODEGEN: Generating message contract since element name no_ from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddEmployee", ReplyAction="*")]
-        WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeResponse AddEmployee(WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequest request);
+        WindowsFormsClient.ServiceReference1.AddEmployeeResponse AddEmployee(WindowsFormsClient.ServiceReference1.AddEmployeeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddEmployee", ReplyAction="*")]
-        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeResponse> AddEmployeeAsync(WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequest request);
+        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.AddEmployeeResponse> AddEmployeeAsync(WindowsFormsClient.ServiceReference1.AddEmployeeRequest request);
         
         // CODEGEN: Generating message contract since element name no_ from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateEmployee", ReplyAction="*")]
-        WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeResponse UpdateEmployee(WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequest request);
+        WindowsFormsClient.ServiceReference1.UpdateEmployeeResponse UpdateEmployee(WindowsFormsClient.ServiceReference1.UpdateEmployeeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateEmployee", ReplyAction="*")]
-        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeResponse> UpdateEmployeeAsync(WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequest request);
+        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.UpdateEmployeeResponse> UpdateEmployeeAsync(WindowsFormsClient.ServiceReference1.UpdateEmployeeRequest request);
         
         // CODEGEN: Generating message contract since element name no_ from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteEmployee", ReplyAction="*")]
-        WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeResponse DeleteEmployee(WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequest request);
+        WindowsFormsClient.ServiceReference1.DeleteEmployeeResponse DeleteEmployee(WindowsFormsClient.ServiceReference1.DeleteEmployeeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteEmployee", ReplyAction="*")]
-        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeResponse> DeleteEmployeeAsync(WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequest request);
+        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.DeleteEmployeeResponse> DeleteEmployeeAsync(WindowsFormsClient.ServiceReference1.DeleteEmployeeRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -809,12 +809,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     public partial class GetEmployeesRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployees", Namespace="http://tempuri.org/", Order=0)]
-        public WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequestBody Body;
+        public WindowsFormsClient.ServiceReference1.GetEmployeesRequestBody Body;
         
         public GetEmployeesRequest() {
         }
         
-        public GetEmployeesRequest(WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequestBody Body) {
+        public GetEmployeesRequest(WindowsFormsClient.ServiceReference1.GetEmployeesRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -836,12 +836,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     public partial class GetEmployeesResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeesResponse", Namespace="http://tempuri.org/", Order=0)]
-        public WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesResponseBody Body;
+        public WindowsFormsClient.ServiceReference1.GetEmployeesResponseBody Body;
         
         public GetEmployeesResponse() {
         }
         
-        public GetEmployeesResponse(WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesResponseBody Body) {
+        public GetEmployeesResponse(WindowsFormsClient.ServiceReference1.GetEmployeesResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -853,12 +853,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     public partial class GetEmployeesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public WindowsFormsClient.ServiceReferenceTUPA5.CRONUS_Sverige_AB_Employee[] GetEmployeesResult;
+        public WindowsFormsClient.ServiceReference1.CRONUS_Sverige_AB_Employee[] GetEmployeesResult;
         
         public GetEmployeesResponseBody() {
         }
         
-        public GetEmployeesResponseBody(WindowsFormsClient.ServiceReferenceTUPA5.CRONUS_Sverige_AB_Employee[] GetEmployeesResult) {
+        public GetEmployeesResponseBody(WindowsFormsClient.ServiceReference1.CRONUS_Sverige_AB_Employee[] GetEmployeesResult) {
             this.GetEmployeesResult = GetEmployeesResult;
         }
     }
@@ -870,12 +870,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     public partial class AddEmployeeRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEmployee", Namespace="http://tempuri.org/", Order=0)]
-        public WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequestBody Body;
+        public WindowsFormsClient.ServiceReference1.AddEmployeeRequestBody Body;
         
         public AddEmployeeRequest() {
         }
         
-        public AddEmployeeRequest(WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequestBody Body) {
+        public AddEmployeeRequest(WindowsFormsClient.ServiceReference1.AddEmployeeRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -928,12 +928,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     public partial class AddEmployeeResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEmployeeResponse", Namespace="http://tempuri.org/", Order=0)]
-        public WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeResponseBody Body;
+        public WindowsFormsClient.ServiceReference1.AddEmployeeResponseBody Body;
         
         public AddEmployeeResponse() {
         }
         
-        public AddEmployeeResponse(WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeResponseBody Body) {
+        public AddEmployeeResponse(WindowsFormsClient.ServiceReference1.AddEmployeeResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -955,12 +955,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     public partial class UpdateEmployeeRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateEmployee", Namespace="http://tempuri.org/", Order=0)]
-        public WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequestBody Body;
+        public WindowsFormsClient.ServiceReference1.UpdateEmployeeRequestBody Body;
         
         public UpdateEmployeeRequest() {
         }
         
-        public UpdateEmployeeRequest(WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequestBody Body) {
+        public UpdateEmployeeRequest(WindowsFormsClient.ServiceReference1.UpdateEmployeeRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1013,12 +1013,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     public partial class UpdateEmployeeResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateEmployeeResponse", Namespace="http://tempuri.org/", Order=0)]
-        public WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeResponseBody Body;
+        public WindowsFormsClient.ServiceReference1.UpdateEmployeeResponseBody Body;
         
         public UpdateEmployeeResponse() {
         }
         
-        public UpdateEmployeeResponse(WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeResponseBody Body) {
+        public UpdateEmployeeResponse(WindowsFormsClient.ServiceReference1.UpdateEmployeeResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1040,12 +1040,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     public partial class DeleteEmployeeRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteEmployee", Namespace="http://tempuri.org/", Order=0)]
-        public WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequestBody Body;
+        public WindowsFormsClient.ServiceReference1.DeleteEmployeeRequestBody Body;
         
         public DeleteEmployeeRequest() {
         }
         
-        public DeleteEmployeeRequest(WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequestBody Body) {
+        public DeleteEmployeeRequest(WindowsFormsClient.ServiceReference1.DeleteEmployeeRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1074,12 +1074,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     public partial class DeleteEmployeeResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteEmployeeResponse", Namespace="http://tempuri.org/", Order=0)]
-        public WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeResponseBody Body;
+        public WindowsFormsClient.ServiceReference1.DeleteEmployeeResponseBody Body;
         
         public DeleteEmployeeResponse() {
         }
         
-        public DeleteEmployeeResponse(WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeResponseBody Body) {
+        public DeleteEmployeeResponse(WindowsFormsClient.ServiceReference1.DeleteEmployeeResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1095,12 +1095,12 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface WebServiceTUPA5SoapChannel : WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap, System.ServiceModel.IClientChannel {
+    public interface WebServiceTUPA5SoapChannel : WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WebServiceTUPA5SoapClient : System.ServiceModel.ClientBase<WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap>, WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap {
+    public partial class WebServiceTUPA5SoapClient : System.ServiceModel.ClientBase<WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap>, WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap {
         
         public WebServiceTUPA5SoapClient() {
         }
@@ -1122,36 +1122,36 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesResponse WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap.GetEmployees(WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequest request) {
+        WindowsFormsClient.ServiceReference1.GetEmployeesResponse WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap.GetEmployees(WindowsFormsClient.ServiceReference1.GetEmployeesRequest request) {
             return base.Channel.GetEmployees(request);
         }
         
-        public WindowsFormsClient.ServiceReferenceTUPA5.CRONUS_Sverige_AB_Employee[] GetEmployees() {
-            WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequest inValue = new WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequest();
-            inValue.Body = new WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequestBody();
-            WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesResponse retVal = ((WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap)(this)).GetEmployees(inValue);
+        public WindowsFormsClient.ServiceReference1.CRONUS_Sverige_AB_Employee[] GetEmployees() {
+            WindowsFormsClient.ServiceReference1.GetEmployeesRequest inValue = new WindowsFormsClient.ServiceReference1.GetEmployeesRequest();
+            inValue.Body = new WindowsFormsClient.ServiceReference1.GetEmployeesRequestBody();
+            WindowsFormsClient.ServiceReference1.GetEmployeesResponse retVal = ((WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap)(this)).GetEmployees(inValue);
             return retVal.Body.GetEmployeesResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesResponse> WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap.GetEmployeesAsync(WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequest request) {
+        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.GetEmployeesResponse> WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap.GetEmployeesAsync(WindowsFormsClient.ServiceReference1.GetEmployeesRequest request) {
             return base.Channel.GetEmployeesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesResponse> GetEmployeesAsync() {
-            WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequest inValue = new WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequest();
-            inValue.Body = new WindowsFormsClient.ServiceReferenceTUPA5.GetEmployeesRequestBody();
-            return ((WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap)(this)).GetEmployeesAsync(inValue);
+        public System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.GetEmployeesResponse> GetEmployeesAsync() {
+            WindowsFormsClient.ServiceReference1.GetEmployeesRequest inValue = new WindowsFormsClient.ServiceReference1.GetEmployeesRequest();
+            inValue.Body = new WindowsFormsClient.ServiceReference1.GetEmployeesRequestBody();
+            return ((WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap)(this)).GetEmployeesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeResponse WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap.AddEmployee(WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequest request) {
+        WindowsFormsClient.ServiceReference1.AddEmployeeResponse WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap.AddEmployee(WindowsFormsClient.ServiceReference1.AddEmployeeRequest request) {
             return base.Channel.AddEmployee(request);
         }
         
         public void AddEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail) {
-            WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequest inValue = new WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequest();
-            inValue.Body = new WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequestBody();
+            WindowsFormsClient.ServiceReference1.AddEmployeeRequest inValue = new WindowsFormsClient.ServiceReference1.AddEmployeeRequest();
+            inValue.Body = new WindowsFormsClient.ServiceReference1.AddEmployeeRequestBody();
             inValue.Body.no_ = no_;
             inValue.Body.first_Name = first_Name;
             inValue.Body.last_Name = last_Name;
@@ -1159,17 +1159,17 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
             inValue.Body.address = address;
             inValue.Body.phone_No_ = phone_No_;
             inValue.Body.e_Mail = e_Mail;
-            WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeResponse retVal = ((WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap)(this)).AddEmployee(inValue);
+            WindowsFormsClient.ServiceReference1.AddEmployeeResponse retVal = ((WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap)(this)).AddEmployee(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeResponse> WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap.AddEmployeeAsync(WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequest request) {
+        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.AddEmployeeResponse> WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap.AddEmployeeAsync(WindowsFormsClient.ServiceReference1.AddEmployeeRequest request) {
             return base.Channel.AddEmployeeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeResponse> AddEmployeeAsync(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail) {
-            WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequest inValue = new WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequest();
-            inValue.Body = new WindowsFormsClient.ServiceReferenceTUPA5.AddEmployeeRequestBody();
+        public System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.AddEmployeeResponse> AddEmployeeAsync(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail) {
+            WindowsFormsClient.ServiceReference1.AddEmployeeRequest inValue = new WindowsFormsClient.ServiceReference1.AddEmployeeRequest();
+            inValue.Body = new WindowsFormsClient.ServiceReference1.AddEmployeeRequestBody();
             inValue.Body.no_ = no_;
             inValue.Body.first_Name = first_Name;
             inValue.Body.last_Name = last_Name;
@@ -1177,17 +1177,17 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
             inValue.Body.address = address;
             inValue.Body.phone_No_ = phone_No_;
             inValue.Body.e_Mail = e_Mail;
-            return ((WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap)(this)).AddEmployeeAsync(inValue);
+            return ((WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap)(this)).AddEmployeeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeResponse WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap.UpdateEmployee(WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequest request) {
+        WindowsFormsClient.ServiceReference1.UpdateEmployeeResponse WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap.UpdateEmployee(WindowsFormsClient.ServiceReference1.UpdateEmployeeRequest request) {
             return base.Channel.UpdateEmployee(request);
         }
         
         public void UpdateEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail) {
-            WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequest inValue = new WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequest();
-            inValue.Body = new WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequestBody();
+            WindowsFormsClient.ServiceReference1.UpdateEmployeeRequest inValue = new WindowsFormsClient.ServiceReference1.UpdateEmployeeRequest();
+            inValue.Body = new WindowsFormsClient.ServiceReference1.UpdateEmployeeRequestBody();
             inValue.Body.no_ = no_;
             inValue.Body.first_Name = first_Name;
             inValue.Body.last_Name = last_Name;
@@ -1195,17 +1195,17 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
             inValue.Body.address = address;
             inValue.Body.phone_No_ = phone_No_;
             inValue.Body.e_Mail = e_Mail;
-            WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeResponse retVal = ((WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap)(this)).UpdateEmployee(inValue);
+            WindowsFormsClient.ServiceReference1.UpdateEmployeeResponse retVal = ((WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap)(this)).UpdateEmployee(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeResponse> WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap.UpdateEmployeeAsync(WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequest request) {
+        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.UpdateEmployeeResponse> WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap.UpdateEmployeeAsync(WindowsFormsClient.ServiceReference1.UpdateEmployeeRequest request) {
             return base.Channel.UpdateEmployeeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeResponse> UpdateEmployeeAsync(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail) {
-            WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequest inValue = new WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequest();
-            inValue.Body = new WindowsFormsClient.ServiceReferenceTUPA5.UpdateEmployeeRequestBody();
+        public System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.UpdateEmployeeResponse> UpdateEmployeeAsync(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail) {
+            WindowsFormsClient.ServiceReference1.UpdateEmployeeRequest inValue = new WindowsFormsClient.ServiceReference1.UpdateEmployeeRequest();
+            inValue.Body = new WindowsFormsClient.ServiceReference1.UpdateEmployeeRequestBody();
             inValue.Body.no_ = no_;
             inValue.Body.first_Name = first_Name;
             inValue.Body.last_Name = last_Name;
@@ -1213,31 +1213,31 @@ namespace WindowsFormsClient.ServiceReferenceTUPA5 {
             inValue.Body.address = address;
             inValue.Body.phone_No_ = phone_No_;
             inValue.Body.e_Mail = e_Mail;
-            return ((WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap)(this)).UpdateEmployeeAsync(inValue);
+            return ((WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap)(this)).UpdateEmployeeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeResponse WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap.DeleteEmployee(WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequest request) {
+        WindowsFormsClient.ServiceReference1.DeleteEmployeeResponse WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap.DeleteEmployee(WindowsFormsClient.ServiceReference1.DeleteEmployeeRequest request) {
             return base.Channel.DeleteEmployee(request);
         }
         
         public void DeleteEmployee(string no_) {
-            WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequest inValue = new WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequest();
-            inValue.Body = new WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequestBody();
+            WindowsFormsClient.ServiceReference1.DeleteEmployeeRequest inValue = new WindowsFormsClient.ServiceReference1.DeleteEmployeeRequest();
+            inValue.Body = new WindowsFormsClient.ServiceReference1.DeleteEmployeeRequestBody();
             inValue.Body.no_ = no_;
-            WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeResponse retVal = ((WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap)(this)).DeleteEmployee(inValue);
+            WindowsFormsClient.ServiceReference1.DeleteEmployeeResponse retVal = ((WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap)(this)).DeleteEmployee(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeResponse> WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap.DeleteEmployeeAsync(WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequest request) {
+        System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.DeleteEmployeeResponse> WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap.DeleteEmployeeAsync(WindowsFormsClient.ServiceReference1.DeleteEmployeeRequest request) {
             return base.Channel.DeleteEmployeeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeResponse> DeleteEmployeeAsync(string no_) {
-            WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequest inValue = new WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequest();
-            inValue.Body = new WindowsFormsClient.ServiceReferenceTUPA5.DeleteEmployeeRequestBody();
+        public System.Threading.Tasks.Task<WindowsFormsClient.ServiceReference1.DeleteEmployeeResponse> DeleteEmployeeAsync(string no_) {
+            WindowsFormsClient.ServiceReference1.DeleteEmployeeRequest inValue = new WindowsFormsClient.ServiceReference1.DeleteEmployeeRequest();
+            inValue.Body = new WindowsFormsClient.ServiceReference1.DeleteEmployeeRequestBody();
             inValue.Body.no_ = no_;
-            return ((WindowsFormsClient.ServiceReferenceTUPA5.WebServiceTUPA5Soap)(this)).DeleteEmployeeAsync(inValue);
+            return ((WindowsFormsClient.ServiceReference1.WebServiceTUPA5Soap)(this)).DeleteEmployeeAsync(inValue);
         }
     }
 }

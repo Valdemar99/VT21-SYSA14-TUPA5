@@ -13,10 +13,10 @@ namespace WebApplicationTUPA5
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TUPA5Entities : DbContext
+    public partial class EmployeeEntities : DbContext
     {
-        public TUPA5Entities()
-            : base("name=TUPA5Entities")
+        public EmployeeEntities()
+            : base("name=EmployeeEntities")
         {
         }
     
