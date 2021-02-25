@@ -26,27 +26,10 @@ namespace WebApplicationTUPA5
         }
 
         [WebMethod]
-        public string AddEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail)
+        public void AddEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail)
         {
-            string returnString = "Success!";
-            try
-            {
-                dataAccessLayer.AddEmployee(no_, first_Name, last_Name, job_Title, address, phone_No_, e_Mail);
-            }
-            catch (DbEntityValidationException e)
-            {
-                returnString = "";
-                foreach (var eve in e.EntityValidationErrors)
-                {
-                    returnString += "Entity of type \"" + eve.Entry.Entity.GetType().Name + "\" in state \"" + eve.Entry.State + " has the following validation errors:";
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        returnString += "- Property: \"" + ve.PropertyName + "\", Error: \"" + ve.ErrorMessage + "\"";
-                    }
-                }
-            }
-            return returnString;
-        }
+            dataAccessLayer.AddEmployee(no_, first_Name, last_Name, job_Title, address, phone_No_, e_Mail);
+        }   
 
         [WebMethod]
         public void UpdateEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail)

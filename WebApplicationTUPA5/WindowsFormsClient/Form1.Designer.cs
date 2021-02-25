@@ -79,17 +79,21 @@ namespace WindowsFormsClient
             // 
             // dataGridViewEmployee
             // 
+            this.dataGridViewEmployee.AllowUserToAddRows = false;
+            this.dataGridViewEmployee.AllowUserToDeleteRows = false;
             this.dataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEmployee.Enabled = false;
             this.dataGridViewEmployee.Location = new System.Drawing.Point(295, 11);
             this.dataGridViewEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewEmployee.Name = "dataGridViewEmployee";
             this.dataGridViewEmployee.RowHeadersWidth = 62;
             this.dataGridViewEmployee.RowTemplate.Height = 28;
-            this.dataGridViewEmployee.Size = new System.Drawing.Size(304, 423);
+            this.dataGridViewEmployee.Size = new System.Drawing.Size(794, 423);
             this.dataGridViewEmployee.TabIndex = 4;
             // 
             // textBoxNo
             // 
+            this.textBoxNo.Enabled = false;
             this.textBoxNo.Location = new System.Drawing.Point(157, 59);
             this.textBoxNo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNo.Name = "textBoxNo";
@@ -115,6 +119,7 @@ namespace WindowsFormsClient
             this.radioButtonAdd.TabStop = true;
             this.radioButtonAdd.Text = "Add Employee";
             this.radioButtonAdd.UseVisualStyleBackColor = true;
+            this.radioButtonAdd.CheckedChanged += new System.EventHandler(this.radioButtonAdd_CheckedChanged);
             // 
             // radioButtonEdit
             // 
@@ -279,7 +284,7 @@ namespace WindowsFormsClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 453);
+            this.ClientSize = new System.Drawing.Size(1100, 453);
             this.Controls.Add(this.labelFeedback);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelPhoneNo);

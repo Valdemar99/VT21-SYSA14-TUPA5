@@ -17,7 +17,7 @@ namespace WindowsFormsClient
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            string newEmployeeNumber = textBoxAddress.Text; //retrieves text from textbox
+            string newEmployeeNumber = textBoxNo.Text; //retrieves text from textbox
             string firstName = textBoxFirstName.Text;
             string lastName = textBoxLastName.Text;
             string jobTitle = textBoxJobTitle.Text;
@@ -49,7 +49,8 @@ namespace WindowsFormsClient
             {
                 try
                 {
-                    string oldEmployeeNo = comboBoxOldEmployeeNo.SelectedItem.ToString();                   
+                    CRONUS_Sverige_AB_Employee employeeToEdit = comboBoxOldEmployeeNo.SelectedItem as CRONUS_Sverige_AB_Employee;
+                    string oldEmployeeNo = employeeToEdit.No_;
                     if (newEmployeeNumber.Equals(""))//Error message if the textbox is empty
                     {
                         labelFeedback.Text = "To edit an employee, please insert the new employee number.";
@@ -64,7 +65,7 @@ namespace WindowsFormsClient
                 }
                 catch (NullReferenceException)
                 {
-                    labelFeedback.Text = "Please choose address to edit";
+                    labelFeedback.Text = "Please choose an employee to edit";
                 }
                 catch(Exception)
                 {
@@ -80,8 +81,10 @@ namespace WindowsFormsClient
         {
             try
             {
-                string employeeNumberToDelete = comboBoxDelete.SelectedItem.ToString();
+                CRONUS_Sverige_AB_Employee employeeToDelete = comboBoxDelete.SelectedItem as CRONUS_Sverige_AB_Employee;
+                string employeeNumberToDelete = employeeToDelete.No_;
                 proxy.DeleteEmployee(employeeNumberToDelete);
+                this.RefreshEmployeeData();
             }
             catch (NullReferenceException)
             {
@@ -95,6 +98,7 @@ namespace WindowsFormsClient
             try
             {
                 this.RefreshComboBoxWithEmployees();
+                this.RefreshEmployeeTable();
 
                 this.ChangeVisibleColumns();
             } catch(Exception ex)
@@ -105,17 +109,24 @@ namespace WindowsFormsClient
             
         }
 
+        private void RefreshEmployeeTable()
+        {
+            CRONUS_Sverige_AB_Employee[] employees = proxy.GetEmployees();
+            dataGridViewEmployee.DataSource = employees;
+
+        }
+
         private void ChangeVisibleColumns()
         {
             DataGridViewColumnCollection columnList = dataGridViewEmployee.Columns;
             columnList.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
             this.dataGridViewEmployee.Columns["No_"].Visible = true;
-            this.dataGridViewEmployee.Columns["First Name"].Visible = true;
-            this.dataGridViewEmployee.Columns["Last Name"].Visible = true;
-            this.dataGridViewEmployee.Columns["Job Title"].Visible = true;
+            this.dataGridViewEmployee.Columns["First_Name"].Visible = true;
+            this.dataGridViewEmployee.Columns["Last_Name"].Visible = true;
+            this.dataGridViewEmployee.Columns["Job_Title"].Visible = true;
             this.dataGridViewEmployee.Columns["Address"].Visible = true;
-            this.dataGridViewEmployee.Columns["Phone No_"].Visible = true;
-            this.dataGridViewEmployee.Columns["E-Mail"].Visible = true;
+            this.dataGridViewEmployee.Columns["Phone_No_"].Visible = true;
+            this.dataGridViewEmployee.Columns["E_Mail"].Visible = true;
 
 
         }
@@ -126,6 +137,24 @@ namespace WindowsFormsClient
             comboBoxOldEmployeeNo.DataSource = emp; 
             comboBoxOldEmployeeNo.DisplayMember = "No_";
             comboBoxOldEmployeeNo.ValueMember = "No_";
+
+            comboBoxDelete.DataSource = emp;
+            comboBoxDelete.DisplayMember = "No_";
+            comboBoxDelete.ValueMember = "No_";
+        }
+
+        private void radioButtonAdd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonAdd.Checked)
+            {
+                comboBoxOldEmployeeNo.Enabled = false;
+                textBoxNo.Enabled = true;
+            }
+            else
+            {
+                comboBoxOldEmployeeNo.Enabled = true;
+                textBoxNo.Enabled = false;
+            }
         }
     }
 }
