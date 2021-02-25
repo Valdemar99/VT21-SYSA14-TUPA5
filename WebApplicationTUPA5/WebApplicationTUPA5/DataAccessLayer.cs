@@ -12,8 +12,14 @@ namespace WebApplicationTUPA5
         {
             using (EmployeeEntities entity = new EmployeeEntities())
             {
-                List<CRONUS_Sverige_AB_Employee> tmpEmployee = entity.CRONUS_Sverige_AB_Employee.ToList();
-                return tmpEmployee;
+                List<CRONUS_Sverige_AB_Employee> employeeList = entity.CRONUS_Sverige_AB_Employee.ToList();
+
+                //Make all picture properties null before sending
+                foreach(CRONUS_Sverige_AB_Employee tmpEmployee in employeeList)
+                {
+                    tmpEmployee.Picture = null;
+                }
+                return employeeList;
             }
         }
         public void AddEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail)
@@ -29,6 +35,7 @@ namespace WebApplicationTUPA5
                     Job_Title = job_Title,
                     Address = address,
                     Phone_No_ = phone_No_,
+                    E_Mail = e_Mail
 
                 };
 
@@ -41,10 +48,11 @@ namespace WebApplicationTUPA5
                         {
                             prop.SetValue(tmpEmployee, " ", null);
                         }
-                        else if (prop.PropertyType == typeof(DateTime))
-                        {
-                            prop.SetValue(tmpEmployee, DateTime.Now, null);
-                        }
+                        
+                    }
+                    else if (prop.PropertyType == typeof(DateTime))
+                    {
+                        prop.SetValue(tmpEmployee, DateTime.Now);
                     }
                 }
 

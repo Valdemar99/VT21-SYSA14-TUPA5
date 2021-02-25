@@ -87,7 +87,7 @@
           <Property Name="Alt__Address_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Alt__Address_Start_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Alt__Address_End_Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Picture" MaxLength="Max" FixedLength="false" Type="Binary" />
           <Property Name="Birth_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Social_Security_No_" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Union_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
