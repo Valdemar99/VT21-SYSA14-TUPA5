@@ -28,44 +28,42 @@ namespace WindowsFormsClient
 
             if (radioButtonAdd.Checked == true)
             {
-                if (newEmployeeNumber.Equals(""))//Error message if the textbox is empty
+                if (textBoxNo.TextLength == 0)//Error message if the textbox is empty
                 {
                     labelFeedback.Text = "To add a new employee, please insert an employee number.";
                 }
-
-                try 
+                else
                 {
                     proxy.AddEmployee(newEmployeeNumber, firstName, lastName, jobTitle, address, phoneNumber, email);
 
                     labelFeedback.Text = "The employee has been successfully added to database.";
                     RefreshEmployeeData();
-                } catch
-                {
-
                 }
             }
 
             if (radioButtonEdit.Checked == true) //If edit building is chosen
+     
             {
                 try
                 {
+                    textBoxFirstName.Clear();
                     CRONUS_Sverige_AB_Employee employeeToEdit = comboBoxOldEmployeeNo.SelectedItem as CRONUS_Sverige_AB_Employee;
-                    string oldEmployeeNo = employeeToEdit.No_;
-                    if (newEmployeeNumber.Equals(""))//Error message if the textbox is empty
+                    
+                    if (comboBoxOldEmployeeNo.SelectedItem == null)//Error message if the textbox is empty
                     {
                         labelFeedback.Text = "To edit an employee, please insert the new employee number.";
-                    }
+                    } 
+                   
                     else
-                    { //Checks if the new address doesn't exist in the database, if so, edits the old address to the new one
+                    {
+                        
+                        string oldEmployeeNo = comboBoxOldEmployeeNo.SelectedItem.ToString(); 
+                        //Checks if the new address doesn't exist in the database, if so, edits the old address to the new one
                         proxy.UpdateEmployee(oldEmployeeNo, firstName, lastName, jobTitle, address, phoneNumber, email);
                         labelFeedback.Text = "The employee has been successfully updated within the database.";
                         RefreshEmployeeData();
                     }
 
-                }
-                catch (NullReferenceException)
-                {
-                    labelFeedback.Text = "Please choose an employee to edit";
                 }
                 catch(Exception)
                 {
@@ -79,17 +77,19 @@ namespace WindowsFormsClient
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                CRONUS_Sverige_AB_Employee employeeToDelete = comboBoxDelete.SelectedItem as CRONUS_Sverige_AB_Employee;
-                string employeeNumberToDelete = employeeToDelete.No_;
-                proxy.DeleteEmployee(employeeNumberToDelete);
-                this.RefreshEmployeeData();
-            }
-            catch (NullReferenceException)
-            {
-                labelFeedback.Text = "Please choose employee to delete.";
+            if (comboBoxDelete.SelectedItem != null) {
+                
+                    CRONUS_Sverige_AB_Employee employeeToDelete = comboBoxDelete.SelectedItem as CRONUS_Sverige_AB_Employee;
+                    string employeeNumberToDelete = employeeToDelete.No_;
+                    proxy.DeleteEmployee(employeeNumberToDelete);
+                    this.RefreshEmployeeData();
+               
+            } else { 
+                   labelFeedback.Text = "Please choose employee to delete.";
+                
+                {
 
+                }
             }
         }
         private void RefreshEmployeeData()
@@ -156,6 +156,8 @@ namespace WindowsFormsClient
                 textBoxNo.Enabled = false;
             }
         }
+
+      
     }
 }
 
