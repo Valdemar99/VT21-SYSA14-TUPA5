@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Web.Services.Protocols;
 
 namespace WebApplicationTUPA5
 {
@@ -22,13 +24,27 @@ namespace WebApplicationTUPA5
         [WebMethod]
         public List<CRONUS_Sverige_AB_Employee> GetEmployees()
         {
-            return dataAccessLayer.GetEmployees();
+            try
+            {
+                return dataAccessLayer.GetEmployees();
+            }
+            catch (EntityException exe)
+            {
+                throw new SoapException("Database connection error, please contact support.", SoapException.ClientFaultCode, exe);
+            }
         }
 
         [WebMethod]
         public void AddEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail)
         {
-            dataAccessLayer.AddEmployee(no_, first_Name, last_Name, job_Title, address, phone_No_, e_Mail);
+            try
+            {
+                dataAccessLayer.AddEmployee(no_, first_Name, last_Name, job_Title, address, phone_No_, e_Mail);
+            }
+            catch (EntityException exe)
+            {
+                throw new SoapException("Database connection error, please contact support.", SoapException.ClientFaultCode, exe);
+            }
         }   
 
         [WebMethod]

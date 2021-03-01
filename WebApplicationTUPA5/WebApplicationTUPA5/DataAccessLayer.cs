@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Services.Protocols;
 
 namespace WebApplicationTUPA5
 {
@@ -12,10 +14,10 @@ namespace WebApplicationTUPA5
         {
             using (EmployeeEntities entity = new EmployeeEntities())
             {
-                List<CRONUS_Sverige_AB_Employee> employeeList = entity.CRONUS_Sverige_AB_Employee.ToList();
-
+                List<CRONUS_Sverige_AB_Employee> employeeList = new List<CRONUS_Sverige_AB_Employee>();
+                employeeList = entity.CRONUS_Sverige_AB_Employee.ToList();
                 //Make all picture properties null before sending
-                foreach(CRONUS_Sverige_AB_Employee tmpEmployee in employeeList)
+                foreach (CRONUS_Sverige_AB_Employee tmpEmployee in employeeList)
                 {
                     tmpEmployee.Picture = null;
                 }

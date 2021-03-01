@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
+using System.ServiceModel;
+using System.Web.Services.Protocols;
 using System.Windows.Forms;
 using WindowsFormsClient.ServiceReference1;
 
@@ -34,8 +37,18 @@ namespace WindowsFormsClient
                 }
                 else
                 {
-                    proxy.AddEmployee(newEmployeeNumber, firstName, lastName, jobTitle, address, phoneNumber, email);
-
+                    try
+                    {
+                        proxy.AddEmployee(newEmployeeNumber, firstName, lastName, jobTitle, address, phoneNumber, email);
+                    }
+                    catch (EndpointNotFoundException ex)
+                    {
+                        labelFeedback.Text = "Please check your connection and try again.";
+                    }
+                    catch (SoapException soapEx)
+                    {
+                        labelFeedback.Text = soapEx.Message;
+                    }
                     labelFeedback.Text = "The employee has been successfully added to database.";
                     RefreshEmployeeData();
                 }
@@ -69,8 +82,6 @@ namespace WindowsFormsClient
                 {
                     // If the new address already exists it sends an error message
                     labelFeedback.Text = "This building with inserted new address already exists\n in our database. Please try another another address.";
-
-                    //Generic error handling.
                 }
             }
         }
@@ -86,10 +97,6 @@ namespace WindowsFormsClient
                
             } else { 
                    labelFeedback.Text = "Please choose employee to delete.";
-                
-                {
-
-                }
             }
         }
         private void RefreshEmployeeData()
@@ -101,10 +108,12 @@ namespace WindowsFormsClient
                 this.RefreshEmployeeTable();
 
                 this.ChangeVisibleColumns();
-            } catch(Exception ex)
+            } catch(EndpointNotFoundException ex)
             {
-                labelFeedback.Text = ex.Message;
-                Console.WriteLine(ex.Message);
+                labelFeedback.Text = "Please check your connection and try again.";
+            } catch (SoapException soapEx)
+            {
+                labelFeedback.Text = soapEx.Message;
             }
             
         }
