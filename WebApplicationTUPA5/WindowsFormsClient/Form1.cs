@@ -31,7 +31,7 @@ namespace WindowsFormsClient
 
             if (radioButtonAdd.Checked == true)
             {
-                if (textBoxNo.TextLength == 0)//Error message if the textbox is empty
+                if (textBoxNo.Text.Equals(""))//Error message if the textbox is empty
                 {
                     labelFeedback.Text = "To add a new employee, please insert an employee number.";
                 }
@@ -40,17 +40,17 @@ namespace WindowsFormsClient
                     try
                     {
                         proxy.AddEmployee(newEmployeeNumber, firstName, lastName, jobTitle, address, phoneNumber, email);
+                        labelFeedback.Text = "The employee has been successfully added to database.";
+                        RefreshEmployeeData();
                     }
                     catch (EndpointNotFoundException ex)
                     {
                         labelFeedback.Text = "Please check your connection and try again.";
                     }
-                    catch (SoapException soapEx)
+                    catch (FaultException soapEx)
                     {
                         labelFeedback.Text = soapEx.Message;
                     }
-                    labelFeedback.Text = "The employee has been successfully added to database.";
-                    RefreshEmployeeData();
                 }
             }
 
@@ -78,26 +78,40 @@ namespace WindowsFormsClient
                     }
 
                 }
-                catch(Exception)
+                catch(Exception exe)
                 {
+
                     // If the new address already exists it sends an error message
-                    labelFeedback.Text = "This building with inserted new address already exists\n in our database. Please try another another address.";
+                    labelFeedback.Text = "Error. " + exe.Message;
                 }
             }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if (comboBoxDelete.SelectedItem != null) {
-                
+            try
+            {
+                if (comboBoxDelete.SelectedItem != null)
+                {
+
                     CRONUS_Sverige_AB_Employee employeeToDelete = comboBoxDelete.SelectedItem as CRONUS_Sverige_AB_Employee;
                     string employeeNumberToDelete = employeeToDelete.No_;
                     proxy.DeleteEmployee(employeeNumberToDelete);
                     this.RefreshEmployeeData();
-               
-            } else { 
-                   labelFeedback.Text = "Please choose employee to delete.";
+
+                }
+                else
+                {
+                    labelFeedback.Text = "Please choose employee to delete.";
+                }
             }
+            catch (Exception exe)
+            {
+
+                // If the new address already exists it sends an error message
+                labelFeedback.Text = "Error. " + exe.Message;
+            }
+
         }
         private void RefreshEmployeeData()
         {
@@ -111,19 +125,30 @@ namespace WindowsFormsClient
             } catch(EndpointNotFoundException ex)
             {
                 labelFeedback.Text = "Please check your connection and try again.";
-            } catch (SoapException soapEx)
+            } catch (FaultException soapEx)
             {
                 labelFeedback.Text = soapEx.Message;
             }
-            
+            catch (Exception exe)
+            {
+
+                // If the new address already exists it sends an error message
+                labelFeedback.Text = "Error. " + exe.Message;
+            }
+
         }
 
         private void RefreshEmployeeTable()
         {
-            CRONUS_Sverige_AB_Employee[] employees = proxy.GetEmployees();
-            dataGridViewEmployee.DataSource = employees;
+            try { 
+                CRONUS_Sverige_AB_Employee[] employees = proxy.GetEmployees();
+                dataGridViewEmployee.DataSource = employees;
+            } catch(Exception ex)
+            {
+                throw ex;
+            }
 
-        }
+}
 
         private void ChangeVisibleColumns()
         {
@@ -142,14 +167,21 @@ namespace WindowsFormsClient
 
         private void RefreshComboBoxWithEmployees()
         {
-            CRONUS_Sverige_AB_Employee[] emp = proxy.GetEmployees();
-            comboBoxOldEmployeeNo.DataSource = emp; 
-            comboBoxOldEmployeeNo.DisplayMember = "No_";
-            comboBoxOldEmployeeNo.ValueMember = "No_";
+            try
+            {
+                CRONUS_Sverige_AB_Employee[] emp = proxy.GetEmployees();
+                comboBoxOldEmployeeNo.DataSource = emp;
+                comboBoxOldEmployeeNo.DisplayMember = "No_";
+                comboBoxOldEmployeeNo.ValueMember = "No_";
 
-            comboBoxDelete.DataSource = emp;
-            comboBoxDelete.DisplayMember = "No_";
-            comboBoxDelete.ValueMember = "No_";
+                comboBoxDelete.DataSource = emp;
+                comboBoxDelete.DisplayMember = "No_";
+                comboBoxDelete.ValueMember = "No_";
+            } catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         private void radioButtonAdd_CheckedChanged(object sender, EventArgs e)

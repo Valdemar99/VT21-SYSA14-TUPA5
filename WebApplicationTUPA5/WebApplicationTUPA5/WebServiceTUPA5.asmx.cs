@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
@@ -28,9 +29,13 @@ namespace WebApplicationTUPA5
             {
                 return dataAccessLayer.GetEmployees();
             }
-            catch (EntityException exe)
+            catch (EntityException entityEx)
             {
-                throw new SoapException("Database connection error, please contact support.", SoapException.ClientFaultCode, exe);
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (Exception exc)
+            {
+                throw new SoapException(exc.Message, SoapException.ClientFaultCode, exc);
             }
         }
 
@@ -41,22 +46,72 @@ namespace WebApplicationTUPA5
             {
                 dataAccessLayer.AddEmployee(no_, first_Name, last_Name, job_Title, address, phone_No_, e_Mail);
             }
-            catch (EntityException exe)
+            catch (EntityException entityEx)
             {
-                throw new SoapException("Database connection error, please contact support.", SoapException.ClientFaultCode, exe);
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (ArgumentException entityEx)
+            {
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (DbUpdateException entityEx)
+            {
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (Exception exc)
+            {
+                throw new SoapException(exc.Message, SoapException.ClientFaultCode, exc);
             }
         }   
 
         [WebMethod]
         public void UpdateEmployee(string no_, string first_Name, string last_Name, string job_Title, string address, string phone_No_, string e_Mail)
         {
-            dataAccessLayer.UpdateEmployee(no_, first_Name, last_Name, job_Title, address, phone_No_, e_Mail);
+            try
+            {
+                dataAccessLayer.UpdateEmployee(no_, first_Name, last_Name, job_Title, address, phone_No_, e_Mail);
+            }
+            catch (EntityException entityEx)
+            {
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (ArgumentException entityEx)
+            {
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (DbUpdateException entityEx)
+            {
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (Exception exc)
+            {
+                throw new SoapException(exc.Message, SoapException.ClientFaultCode, exc);
+            }
         }
 
         [WebMethod]
         public void DeleteEmployee(string no_)
         {
-            dataAccessLayer.DeleteEmployee(no_);
+            try
+            {
+                dataAccessLayer.DeleteEmployee(no_);
+            }
+            catch (EntityException entityEx)
+            {
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (ArgumentException entityEx)
+            {
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (DbUpdateException entityEx)
+            {
+                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+            }
+            catch (Exception exc)
+            {
+                throw new SoapException(exc.Message, SoapException.ClientFaultCode, exc);
+            }
         }
 
     }
