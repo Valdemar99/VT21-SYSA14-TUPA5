@@ -101,6 +101,7 @@ namespace WindowsFormsClient
                     string employeeNumberToDelete = employeeToDelete.No_;
                     proxy.DeleteEmployee(employeeNumberToDelete);
                     this.RefreshEmployeeData();
+                    labelFeedback.Text = "Successfully deleted the employee.";
 
                 }
                 else

@@ -22,7 +22,7 @@ namespace WebApplicationTUPA5
     public class WebServiceTUPA5 : System.Web.Services.WebService
     {
         DataAccessLayer dataAccessLayer = new DataAccessLayer();
-
+        //failed login 18456
         [WebMethod]
         public List<CRONUS_Sverige_AB_Employee> GetEmployees()
         {
@@ -35,10 +35,7 @@ namespace WebApplicationTUPA5
                 SqlException sqlException = entityEx.InnerException as SqlException;
                 if (sqlException != null)
                 {
-                    if (sqlException.Number == 2)
-                    {
-                        throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
-                    }
+                    HandleSqlException(sqlException);
                 }
                 else
                 {
@@ -47,7 +44,7 @@ namespace WebApplicationTUPA5
             }
             catch (Exception exc)
             {
-                throw new SoapException(exc.Message, SoapException.ClientFaultCode, exc);
+                throw new SoapException("Unknown error. Please contact support.", SoapException.ClientFaultCode, exc);
             }
             return null;
         }
@@ -64,10 +61,7 @@ namespace WebApplicationTUPA5
                 SqlException sqlException = entityEx.InnerException as SqlException;
                 if (sqlException != null)
                 {
-                    if (sqlException.Number == 2)
-                    {
-                        throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
-                    }
+                    HandleSqlException(sqlException);
                 }
                 else
                 {
@@ -80,11 +74,19 @@ namespace WebApplicationTUPA5
             }
             catch (DbUpdateException entityEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                SqlException sqlException = entityEx.InnerException.InnerException as SqlException;
+                if (sqlException != null)
+                {
+                    HandleSqlException(sqlException);
+                }
+                else
+                {
+                    throw new SoapException("Could not update data while adding. Please contact support.", SoapException.ClientFaultCode, entityEx);
+                }
             }
             catch (Exception exc)
             {
-                throw new SoapException(exc.Message, SoapException.ClientFaultCode, exc);
+                throw new SoapException("Unknown error. Please contact support.", SoapException.ClientFaultCode, exc);
             }
         }   
 
@@ -100,10 +102,7 @@ namespace WebApplicationTUPA5
                 SqlException sqlException = entityEx.InnerException as SqlException;
                 if (sqlException != null)
                 {
-                    if (sqlException.Number == 2)
-                    {
-                        throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
-                    }
+                    HandleSqlException(sqlException);
                 }
                 else
                 {
@@ -116,11 +115,15 @@ namespace WebApplicationTUPA5
             }
             catch (DbUpdateException entityEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                throw new SoapException("Could not update data while editing. Please contact support.", SoapException.ClientFaultCode, entityEx);
+            }
+            catch (InvalidOperationException invEx)
+            {
+                throw new SoapException("No such employee exists. Please select a valid employee number.", SoapException.ClientFaultCode, invEx);
             }
             catch (Exception exc)
             {
-                throw new SoapException(exc.Message, SoapException.ClientFaultCode, exc);
+                throw new SoapException("Unknown error. Please contact support.", SoapException.ClientFaultCode, exc);
             }
         }
 
@@ -136,27 +139,51 @@ namespace WebApplicationTUPA5
                 SqlException sqlException = entityEx.InnerException as SqlException;
                 if (sqlException != null)
                 {
-                    if (sqlException.Number == 2)
-                    {
-                        throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
-                    }
+                    HandleSqlException(sqlException);
                 }
                 else
                 {
                     throw new SoapException("Unknown database error. Please contact support.", SoapException.ClientFaultCode, sqlException);
                 }
             }
-            catch (ArgumentException entityEx)
+            catch (InvalidOperationException invEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                throw new SoapException("No such employee exists. Please select a valid employee number.", SoapException.ClientFaultCode, invEx);
+            }
+            catch (ArgumentNullException argEx)
+            {
+                throw new SoapException("No employee selected. Please select a valid employee number.", SoapException.ClientFaultCode, argEx);
             }
             catch (DbUpdateException entityEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                throw new SoapException("Could not update data while deleting. Please contact support.", SoapException.ClientFaultCode, entityEx);
             }
             catch (Exception exc)
             {
-                throw new SoapException(exc.Message, SoapException.ClientFaultCode, exc);
+                throw new SoapException("Unknown error. Please contact support.", SoapException.ClientFaultCode, exc);
+            }
+        }
+        public void HandleSqlException(SqlException sqlException)
+        {
+            if (sqlException.Number == 2) //No database connection.
+            {
+                throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
+            }
+            else if (sqlException.Number == 18456) //Failed login
+            {
+                throw new SoapException("Login to database failed. Please contact support.", SoapException.ClientFaultCode, sqlException);
+            }
+            else if (sqlException.Number == 2627)//If the employee number already exists.
+            {
+                throw new SoapException("Employee already exists. Please use another employee number.", SoapException.ClientFaultCode, sqlException);
+            }
+            else if (sqlException.Number == 4060)//If the employee number already exists.
+            {
+                throw new SoapException("Cannot access database with current login. Please contact support.", SoapException.ClientFaultCode, sqlException);
+            }
+            else
+            {
+                throw new SoapException("Error connecting to database. Please contact support", SoapException.ClientFaultCode, sqlException);
             }
         }
 

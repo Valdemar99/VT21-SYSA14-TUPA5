@@ -85,7 +85,7 @@ namespace WebApplicationTUPA5
                 {
                     throw entityEx;
                 }
-                catch (ArgumentException argEx)
+                catch (ArgumentNullException argEx)
                 {
                     throw argEx;
                 }
@@ -124,13 +124,17 @@ namespace WebApplicationTUPA5
                 {
                     throw entityEx;
                 }
-                catch (ArgumentException argEx)
+                catch (ArgumentNullException argEx)
                 {
                     throw argEx;
                 }
                 catch (DbUpdateException updateEx)
                 {
                     throw updateEx;
+                }
+                catch (InvalidOperationException invEx)
+                {
+                    throw invEx;
                 }
                 catch (Exception exc)
                 {
@@ -161,6 +165,10 @@ namespace WebApplicationTUPA5
                 catch (DbUpdateException updateEx)
                 {
                     throw updateEx;
+                }
+                catch (InvalidOperationException invEx)
+                {
+                    throw invEx;
                 }
                 catch (Exception exc)
                 {
