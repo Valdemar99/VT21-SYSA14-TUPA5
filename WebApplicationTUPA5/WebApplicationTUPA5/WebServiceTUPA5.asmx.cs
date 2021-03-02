@@ -39,20 +39,17 @@ namespace WebApplicationTUPA5
                     {
                         throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
                     }
-                    else
-                    {
-                        throw new SoapException("Unknown SQL error. Please contact support. Error code " + sqlException.Number, SoapException.ClientFaultCode, sqlException);
-                    }
                 }
                 else
                 {
-                    throw new SoapException("Unknown Entity Framework error. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                    throw new SoapException("Unknown database error. Please contact support.", SoapException.ClientFaultCode, sqlException);
                 }
             }
             catch (Exception exc)
             {
                 throw new SoapException(exc.Message, SoapException.ClientFaultCode, exc);
             }
+            return null;
         }
 
         [WebMethod]
@@ -71,14 +68,10 @@ namespace WebApplicationTUPA5
                     {
                         throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
                     }
-                    else
-                    {
-                        throw new SoapException("Unknown SQL error. Please contact support. Error code " + sqlException.Number, SoapException.ClientFaultCode, sqlException);
-                    }
                 }
                 else
                 {
-                    throw new SoapException("Unknown Entity Framework error. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                    throw new SoapException("Unknown database error. Please contact support.", SoapException.ClientFaultCode, sqlException);
                 }
             }
             catch (ArgumentException entityEx)
@@ -111,14 +104,10 @@ namespace WebApplicationTUPA5
                     {
                         throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
                     }
-                    else
-                    {
-                        throw new SoapException("Unknown SQL error. Please contact support. Error code " + sqlException.Number, SoapException.ClientFaultCode, sqlException);
-                    }
                 }
                 else
                 {
-                    throw new SoapException("Unknown Entity Framework error. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                    throw new SoapException("Unknown database error. Please contact support.", SoapException.ClientFaultCode, sqlException);
                 }
             }
             catch (ArgumentException entityEx)
@@ -151,14 +140,10 @@ namespace WebApplicationTUPA5
                     {
                         throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
                     }
-                    else
-                    {
-                        throw new SoapException("Unknown SQL error. Please contact support. Error code " + sqlException.Number, SoapException.ClientFaultCode, sqlException);
-                    }
                 }
                 else
                 {
-                    throw new SoapException("Unknown Entity Framework error. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                    throw new SoapException("Unknown database error. Please contact support.", SoapException.ClientFaultCode, sqlException);
                 }
             }
             catch (ArgumentException entityEx)
