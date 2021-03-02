@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Core;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -31,7 +32,22 @@ namespace WebApplicationTUPA5
             }
             catch (EntityException entityEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                SqlException sqlException = entityEx.InnerException as SqlException;
+                if (sqlException != null)
+                {
+                    if (sqlException.Number == 2)
+                    {
+                        throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                    }
+                    else
+                    {
+                        throw new SoapException("Unknown SQL error. Please contact support. Error code " + sqlException.Number, SoapException.ClientFaultCode, sqlException);
+                    }
+                }
+                else
+                {
+                    throw new SoapException("Unknown Entity Framework error. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                }
             }
             catch (Exception exc)
             {
@@ -48,11 +64,26 @@ namespace WebApplicationTUPA5
             }
             catch (EntityException entityEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                SqlException sqlException = entityEx.InnerException as SqlException;
+                if (sqlException != null)
+                {
+                    if (sqlException.Number == 2)
+                    {
+                        throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                    }
+                    else
+                    {
+                        throw new SoapException("Unknown SQL error. Please contact support. Error code " + sqlException.Number, SoapException.ClientFaultCode, sqlException);
+                    }
+                }
+                else
+                {
+                    throw new SoapException("Unknown Entity Framework error. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                }
             }
             catch (ArgumentException entityEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                throw new SoapException(entityEx.ParamName + " cannot be blank. Please enter a valid value.", SoapException.ClientFaultCode, entityEx);
             }
             catch (DbUpdateException entityEx)
             {
@@ -73,11 +104,26 @@ namespace WebApplicationTUPA5
             }
             catch (EntityException entityEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                SqlException sqlException = entityEx.InnerException as SqlException;
+                if (sqlException != null)
+                {
+                    if (sqlException.Number == 2)
+                    {
+                        throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                    }
+                    else
+                    {
+                        throw new SoapException("Unknown SQL error. Please contact support. Error code " + sqlException.Number, SoapException.ClientFaultCode, sqlException);
+                    }
+                }
+                else
+                {
+                    throw new SoapException("Unknown Entity Framework error. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                }
             }
             catch (ArgumentException entityEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                throw new SoapException(entityEx.ParamName + " cannot be blank. Please enter a valid value.", SoapException.ClientFaultCode, entityEx);
             }
             catch (DbUpdateException entityEx)
             {
@@ -98,7 +144,22 @@ namespace WebApplicationTUPA5
             }
             catch (EntityException entityEx)
             {
-                throw new SoapException(entityEx.Message, SoapException.ClientFaultCode, entityEx);
+                SqlException sqlException = entityEx.InnerException as SqlException;
+                if (sqlException != null)
+                {
+                    if (sqlException.Number == 2)
+                    {
+                        throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                    }
+                    else
+                    {
+                        throw new SoapException("Unknown SQL error. Please contact support. Error code " + sqlException.Number, SoapException.ClientFaultCode, sqlException);
+                    }
+                }
+                else
+                {
+                    throw new SoapException("Unknown Entity Framework error. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                }
             }
             catch (ArgumentException entityEx)
             {

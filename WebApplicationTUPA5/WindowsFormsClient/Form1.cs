@@ -31,26 +31,23 @@ namespace WindowsFormsClient
 
             if (radioButtonAdd.Checked == true)
             {
-                if (textBoxNo.Text.Equals(""))//Error message if the textbox is empty
+                try
                 {
-                    labelFeedback.Text = "To add a new employee, please insert an employee number.";
+                    proxy.AddEmployee(newEmployeeNumber, firstName, lastName, jobTitle, address, phoneNumber, email);
+                    labelFeedback.Text = "The employee has been successfully added to database.";
+                    RefreshEmployeeData();
                 }
-                else
+                catch (EndpointNotFoundException ex)
                 {
-                    try
-                    {
-                        proxy.AddEmployee(newEmployeeNumber, firstName, lastName, jobTitle, address, phoneNumber, email);
-                        labelFeedback.Text = "The employee has been successfully added to database.";
-                        RefreshEmployeeData();
-                    }
-                    catch (EndpointNotFoundException ex)
-                    {
-                        labelFeedback.Text = "Please check your connection and try again.";
-                    }
-                    catch (FaultException soapEx)
-                    {
-                        labelFeedback.Text = soapEx.Message;
-                    }
+                    labelFeedback.Text = "Please check your connection and try again.";
+                }
+                catch (FaultException soapEx)
+                {
+                    labelFeedback.Text = CleanErrorMessage(soapEx.Message);
+                }
+                catch (Exception exe)
+                {
+                    labelFeedback.Text = "Unknown error. Please contact support. ";
                 }
             }
 
@@ -78,11 +75,17 @@ namespace WindowsFormsClient
                     }
 
                 }
-                catch(Exception exe)
+                catch (EndpointNotFoundException ex)
                 {
-
-                    // If the new address already exists it sends an error message
-                    labelFeedback.Text = "Error. " + exe.Message;
+                    labelFeedback.Text = "Please check your connection and try again.";
+                }
+                catch (FaultException soapEx)
+                {
+                    labelFeedback.Text = CleanErrorMessage(soapEx.Message);
+                }
+                catch (Exception exe)
+                {
+                        labelFeedback.Text = "Unknown error. Please contact support. ";
                 }
             }
         }
@@ -105,11 +108,17 @@ namespace WindowsFormsClient
                     labelFeedback.Text = "Please choose employee to delete.";
                 }
             }
+            catch (EndpointNotFoundException ex)
+            {
+                labelFeedback.Text = "Please check your connection and try again.";
+            }
+            catch (FaultException soapEx)
+            {
+                labelFeedback.Text = CleanErrorMessage(soapEx.Message);
+            }
             catch (Exception exe)
             {
-
-                // If the new address already exists it sends an error message
-                labelFeedback.Text = "Error. " + exe.Message;
+                labelFeedback.Text = "Unknown error. Please contact support. ";
             }
 
         }
@@ -122,18 +131,18 @@ namespace WindowsFormsClient
                 this.RefreshEmployeeTable();
 
                 this.ChangeVisibleColumns();
-            } catch(EndpointNotFoundException ex)
+            }
+            catch (EndpointNotFoundException ex)
             {
                 labelFeedback.Text = "Please check your connection and try again.";
-            } catch (FaultException soapEx)
+            }
+            catch (FaultException soapEx)
             {
-                labelFeedback.Text = soapEx.Message;
+                labelFeedback.Text = CleanErrorMessage(soapEx.Message);
             }
             catch (Exception exe)
             {
-
-                // If the new address already exists it sends an error message
-                labelFeedback.Text = "Error. " + exe.Message;
+                labelFeedback.Text = "Unknown error. Please contact support. ";
             }
 
         }
@@ -196,6 +205,10 @@ namespace WindowsFormsClient
                 comboBoxOldEmployeeNo.Enabled = true;
                 textBoxNo.Enabled = false;
             }
+        }
+        public string CleanErrorMessage(string fullErrorMessage)
+        {
+            return fullErrorMessage.Split(':', '-')[1].Trim();
         }
 
       
