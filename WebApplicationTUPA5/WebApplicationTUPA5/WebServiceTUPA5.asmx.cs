@@ -35,7 +35,8 @@ namespace WebApplicationTUPA5
                 SqlException sqlException = entityEx.InnerException as SqlException;
                 if (sqlException != null)
                 {
-                    HandleSqlException(sqlException);
+                    string errorMessage = HandleSqlException(sqlException);
+                    throw new SoapException(errorMessage, SoapException.ClientFaultCode, sqlException);
                 }
                 else
                 {
@@ -46,7 +47,6 @@ namespace WebApplicationTUPA5
             {
                 throw new SoapException("Unknown error. Please contact support.", SoapException.ClientFaultCode, exc);
             }
-            return null;
         }
 
         [WebMethod]
@@ -61,7 +61,8 @@ namespace WebApplicationTUPA5
                 SqlException sqlException = entityEx.InnerException as SqlException;
                 if (sqlException != null)
                 {
-                    HandleSqlException(sqlException);
+                    string errorMessage = HandleSqlException(sqlException);
+                    throw new SoapException(errorMessage, SoapException.ClientFaultCode, sqlException);
                 }
                 else
                 {
@@ -77,7 +78,8 @@ namespace WebApplicationTUPA5
                 SqlException sqlException = entityEx.InnerException.InnerException as SqlException;
                 if (sqlException != null)
                 {
-                    HandleSqlException(sqlException);
+                    string errorMessage = HandleSqlException(sqlException);
+                    throw new SoapException(errorMessage, SoapException.ClientFaultCode, sqlException);
                 }
                 else
                 {
@@ -102,7 +104,8 @@ namespace WebApplicationTUPA5
                 SqlException sqlException = entityEx.InnerException as SqlException;
                 if (sqlException != null)
                 {
-                    HandleSqlException(sqlException);
+                    string errorMessage = HandleSqlException(sqlException);
+                    throw new SoapException(errorMessage, SoapException.ClientFaultCode, sqlException);
                 }
                 else
                 {
@@ -139,7 +142,8 @@ namespace WebApplicationTUPA5
                 SqlException sqlException = entityEx.InnerException as SqlException;
                 if (sqlException != null)
                 {
-                    HandleSqlException(sqlException);
+                    string errorMessage = HandleSqlException(sqlException);
+                    throw new SoapException(errorMessage, SoapException.ClientFaultCode, sqlException);
                 }
                 else
                 {
@@ -163,27 +167,27 @@ namespace WebApplicationTUPA5
                 throw new SoapException("Unknown error. Please contact support.", SoapException.ClientFaultCode, exc);
             }
         }
-        public void HandleSqlException(SqlException sqlException)
+        public string HandleSqlException(SqlException sqlException)
         {
             if (sqlException.Number == 2) //No database connection.
             {
-                throw new SoapException("Error connecting to database. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                return "Error connecting to database. Please contact support.";
             }
             else if (sqlException.Number == 18456) //Failed login
             {
-                throw new SoapException("Login to database failed. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                return "Login to database failed. Please contact support.";
             }
             else if (sqlException.Number == 2627)//If the employee number already exists.
             {
-                throw new SoapException("Employee already exists. Please use another employee number.", SoapException.ClientFaultCode, sqlException);
+                return "Employee already exists. Please use another employee number.";
             }
             else if (sqlException.Number == 4060)//If the employee number already exists.
             {
-                throw new SoapException("Cannot access database with current login. Please contact support.", SoapException.ClientFaultCode, sqlException);
+                return "Cannot access database with current login. Please contact support.";
             }
             else
             {
-                throw new SoapException("Error connecting to database. Please contact support", SoapException.ClientFaultCode, sqlException);
+                return "Error connecting to database. Please contact support";
             }
         }
 
