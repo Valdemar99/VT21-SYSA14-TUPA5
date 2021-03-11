@@ -167,6 +167,8 @@ namespace WebApplicationTUPA5
                 throw new SoapException("Unknown error. Please contact support.", SoapException.ClientFaultCode, exc);
             }
         }
+
+        //Method to return an error message string for a given SqlException.
         public string HandleSqlException(SqlException sqlException)
         {
             if (sqlException.Number == 2) //No database connection.
